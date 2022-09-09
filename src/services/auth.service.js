@@ -1,26 +1,20 @@
-import axios from "axios";
+export function getToken() {
 
-const API_URL = "https://integracioneseco.co/ApiFacturas/api/";
-
-class AuthService {
-  login(username, password) {
-    return axios
-      .post(API_URL + "login/authenticate", {
-        username,
-        password
-      })
-      .then(response => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
-        }
-
-        return response.data;
-      });
-  }
-
-  getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));;
-  }
+  const url = 'https://integracioneseco.co/ApiFacturas/api/login/authenticate';
+  
+  var raw = JSON.stringify({
+    "Username": "ecocapital_pst",
+    "Password": "FactInt22+*"
+  });
+  
+  var requestOptions = {
+    method: 'POST',
+    body: raw,
+    headers: {"Content-Type": "application/json"},      
+    redirect: 'follow'
+  };
+  
+  return fetch(url, requestOptions)
+    .then(response => response.text())
+    .catch(error => console.log('error', error));    
 }
-
-export default new AuthService();

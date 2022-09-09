@@ -3,7 +3,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import AuthService from "./services/auth.service";
+//import AuthService from "./services/auth.service";
 
 import Login from "./components/login.component";
 
@@ -14,7 +14,7 @@ class App extends Component {
       currentUser: undefined,
     };
   }
-
+/*
   componentDidMount() {
     const user = AuthService.getCurrentUser();    
     if (user) {
@@ -22,7 +22,7 @@ class App extends Component {
         currentUser: user,
       });
     }
-  }
+  }*/
 
   render() {
     return (

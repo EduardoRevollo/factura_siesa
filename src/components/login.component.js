@@ -3,8 +3,8 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-import AuthService from "../services/auth.service";
-import FactService from "../services/producto.service";
+import {getToken} from "../services/auth.service";
+//import FactService from "../services/producto.service";
 
 
 const required = value => {
@@ -55,76 +55,13 @@ export default class Login extends Component {
     this.form.validateAll();
 
     if (this.checkBtn.context._errors.length === 0) {
-      AuthService.login("ecocapital_pst", "FactInt22+*").then(  
-        (response) => {
-          let token = response;
-          localStorage.setItem("user", token);  
-          FactService.getFolio(this.state.username, this.state.password).then(
-            (response) => {
-              let folio = response.detail[0].f_folio;
-              console.log(folio);
-              FactService.getPdf(1,"1",folio).then(
-                (response) => {
-                  var b64 = response.detail[0].f_bas64_rg;
-
-                  // Embed the PDF into the HTML page and show it to the user
-                  var obj = document.createElement('object');
-                  obj.style.width = '100%';
-                  obj.style.height = '842pt';
-                  obj.type = 'application/pdf';
-                  obj.data = 'data:application/pdf;base64,' + b64;
-                  document.body.appendChild(obj);
-
-                  // Insert a link that allows the user to download the PDF file
-                  var link = document.createElement('a');
-                  link.innerHTML = 'Download PDF file';
-                  link.download = 'file.pdf';
-                  link.href = 'data:application/octet-stream;base64,' + b64;
-                  document.body.appendChild(link);
-                },
-                error => {
-                  const resMessage =
-                    (error.response &&
-                      error.response.data &&
-                      error.response.data.message) ||
-                    error.message ||
-                    error.toString();
-        
-                  this.setState({
-                    loading: false,
-                    message: resMessage
-                  });
-                }                
-              )              
-            },
-            error => {
-              const resMessage =
-                (error.response &&
-                  error.response.data &&
-                  error.response.data.message) ||
-                error.message ||
-                error.toString();
-    
-              this.setState({
-                loading: false,
-                message: resMessage
-              });
-            }
-          );
-        },
-        error => {
-          const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-
-          this.setState({
-            loading: false,
-            message: resMessage
-          });
-        }
+      //AuthService.login(this.state.username, this.state.password).then(
+      getToken().then(  
+        token => {
+          //let token = response;
+          console.log('Hola mundo');
+          console.log(token);
+        }        
       );
     } else {
       this.setState({
