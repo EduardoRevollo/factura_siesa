@@ -9,6 +9,7 @@ export function getToken() {
   
   var requestOptions = {
     method: 'POST',
+    mode: 'no-cors',
     body: raw,
     headers: {"Content-Type": "application/json"},      
     redirect: 'follow'
