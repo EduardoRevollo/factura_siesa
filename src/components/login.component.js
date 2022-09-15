@@ -4,7 +4,6 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
 import {getToken} from "../services/auth.service";
-//import FactService from "../services/producto.service";
 
 
 const required = value => {
@@ -60,7 +59,7 @@ export default class Login extends Component {
         token => {
           //let token = response;
           console.log('Hola mundo');
-          console.log(token);
+          console.log('Token: ' + token);
         }        
       );
     } else {

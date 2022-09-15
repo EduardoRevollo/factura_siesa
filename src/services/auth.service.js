@@ -1,21 +1,21 @@
 export function getToken() {
-
   const url = 'https://integracioneseco.co/ApiFacturas/api/login/authenticate';
-  
+  //console.log("Url: " + url);
+
   var raw = JSON.stringify({
     "Username": "ecocapital_pst",
     "Password": "FactInt22+*"
   });
-  
+
   var requestOptions = {
-    method: 'POST',
-    mode: 'no-cors',
-    body: raw,
-    headers: {"Content-Type": "application/json"},      
-    redirect: 'follow'
+  method: 'POST',
+  body: raw,
+  headers: {"Content-Type": "application/json"},
+  redirect: 'follow'
   };
-  
+
   return fetch(url, requestOptions)
-    .then(response => response.text())
-    .catch(error => console.log('error', error));    
+    .then(response => response.json())
+    .then(respuesta => respuesta.toString())
+    .catch(error => console.log('error', error));
 }
