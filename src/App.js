@@ -3,8 +3,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-//import AuthService from "./services/auth.service";
-
+import UserService from "./services/user.service";
 import Login from "./components/login.component";
 
 class App extends Component {
@@ -14,15 +13,15 @@ class App extends Component {
       currentUser: undefined,
     };
   }
-/*
-  componentDidMount() {
-    const user = AuthService.getCurrentUser();    
+
+  componentDidMount() {    
+    const user = UserService.getCurrentUser();    
     if (user) {
       this.setState({
         currentUser: user,
       });
     }
-  }*/
+  }
 
   render() {
     return (
