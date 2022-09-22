@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "14c91c17e39e1429a7daf4dd036ab126",
+    "revision": "241dc92430f1d660e2aa12ed3a11a118",
     "url": "/factura_siesa/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/factura_siesa/static/css/2.80f479d8.chunk.css"
   },
   {
-    "revision": "edf47e76f7d3a4995669",
+    "revision": "98827b0ffc5272d42287",
     "url": "/factura_siesa/static/css/main.db44ec8a.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/factura_siesa/static/js/2.aa13c61c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "edf47e76f7d3a4995669",
-    "url": "/factura_siesa/static/js/main.73d45cc6.chunk.js"
+    "revision": "98827b0ffc5272d42287",
+    "url": "/factura_siesa/static/js/main.aef9c92a.chunk.js"
   },
   {
     "revision": "ed2e261d590c2b513f4d",
