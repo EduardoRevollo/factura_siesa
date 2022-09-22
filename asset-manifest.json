@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/factura_siesa/static/css/main.db44ec8a.chunk.css",
-    "main.js": "/factura_siesa/static/js/main.2aedb54b.chunk.js",
-    "main.js.map": "/factura_siesa/static/js/main.2aedb54b.chunk.js.map",
+    "main.js": "/factura_siesa/static/js/main.d0c93891.chunk.js",
+    "main.js.map": "/factura_siesa/static/js/main.d0c93891.chunk.js.map",
     "runtime-main.js": "/factura_siesa/static/js/runtime-main.c8d1b753.js",
     "runtime-main.js.map": "/factura_siesa/static/js/runtime-main.c8d1b753.js.map",
     "static/css/2.80f479d8.chunk.css": "/factura_siesa/static/css/2.80f479d8.chunk.css",
     "static/js/2.aa13c61c.chunk.js": "/factura_siesa/static/js/2.aa13c61c.chunk.js",
     "static/js/2.aa13c61c.chunk.js.map": "/factura_siesa/static/js/2.aa13c61c.chunk.js.map",
     "index.html": "/factura_siesa/index.html",
-    "precache-manifest.4d07d778f93bb3a4d566380fc96c3998.js": "/factura_siesa/precache-manifest.4d07d778f93bb3a4d566380fc96c3998.js",
+    "precache-manifest.4ec43e42acd016c1341cb27e0b8281a9.js": "/factura_siesa/precache-manifest.4ec43e42acd016c1341cb27e0b8281a9.js",
     "service-worker.js": "/factura_siesa/service-worker.js",
     "static/css/2.80f479d8.chunk.css.map": "/factura_siesa/static/css/2.80f479d8.chunk.css.map",
     "static/css/main.db44ec8a.chunk.css.map": "/factura_siesa/static/css/main.db44ec8a.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.80f479d8.chunk.css",
     "static/js/2.aa13c61c.chunk.js",
     "static/css/main.db44ec8a.chunk.css",
-    "static/js/main.2aedb54b.chunk.js"
+    "static/js/main.d0c93891.chunk.js"
   ]
 }

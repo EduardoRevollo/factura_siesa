@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/factura_siesa/precache-manifest.4d07d778f93bb3a4d566380fc96c3998.js"
+  "/factura_siesa/precache-manifest.4ec43e42acd016c1341cb27e0b8281a9.js"
 );
 
 self.addEventListener('message', (event) => {
