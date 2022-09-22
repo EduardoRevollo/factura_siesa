@@ -62,7 +62,8 @@ export default class Login extends Component {
         (token) => {
             console.log(token);
             localStorage.setItem('token', token);
-            AuthService.getFolio(localStorage.getItem('username'),localStorage.getItem('password'),localStorage.getItem('token'))
+            //AuthService.getFolio(localStorage.getItem('username'),localStorage.getItem('password'),localStorage.getItem('token'))
+            AuthService.getFolio(this.state.username,this.state.password,token)
             .then(response => {
               console.log(response);
               if (response.result === "success") {
