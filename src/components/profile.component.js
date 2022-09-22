@@ -35,7 +35,7 @@ export default class Profile extends Component {
               document.body.appendChild(obj);
               
           });          
-      //});
+
     }
   }
 
@@ -44,9 +44,6 @@ export default class Profile extends Component {
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />
     }
-
-    //const { currentUser } = this.state;
-
     return (
       null
     );

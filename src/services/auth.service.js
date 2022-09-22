@@ -7,7 +7,6 @@ class AuthService {
   getToken() {
 
     const url = 'https://integracioneseco.co/ApiFacturas/api/login/authenticate';
-    //const url = 'http://localhost/ApiFacturas/api/login/authenticate';
     
     var raw = JSON.stringify({
         "Username": "ecocapital_pst",
@@ -30,10 +29,6 @@ class AuthService {
     
   getFolio(codigo, nit, token) {
     const url = 'https://integracioneseco.co/ApiFacturas/api/facturas/getConsultaFacturas?f_id_cia=' + codigo +'&f_nit=' + nit;
-    //const url = 'http://localhost/ApiFacturas/api/facturas/getConsultaFacturas?f_id_cia=' + codigo +'&f_nit=' + nit;
-  
-    //console.log("Url: " + url);
-  
     let autorization = "Bearer " + token;
   
     var requestOptions = {
@@ -49,8 +44,6 @@ class AuthService {
   
   getFactura(folio, token) {
     const url = 'https://integracioneseco.co/ApiFacturas/api/facturas/postConsultaDocumentoPDF';
-    //const url = 'http://localhost/ApiFacturas/api/facturas/postConsultaDocumentoPDF';
-    //console.log("Url: " + url);
   
     var raw = JSON.stringify({
       "f_id_cia": 1,
