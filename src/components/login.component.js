@@ -3,8 +3,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-import {getFolio, getFactura, getToken} from "../services/auth.service";
-
+import AuthService from "../services/auth.service";
 
 const required = value => {
   if (!value) {
@@ -54,50 +53,33 @@ export default class Login extends Component {
     this.form.validateAll();
 
     if (this.checkBtn.context._errors.length === 0) {
-      console.log('Hola mundo');
-      //AuthService.login(this.state.username, this.state.password).then(
-        
-      getToken().then(token => {
-        console.log('Token: ' + token);
-        localStorage.setItem('token', token);
-      }).then(
-        () => {
-    
-          getFolio(this.state.username, this.state.password,localStorage.getItem('token'))
+
+      localStorage.setItem('username', this.state.username);
+      localStorage.setItem('password', this.state.password);
+      AuthService.login(this.state.username, this.state.password);
+
+      AuthService.getToken().then(
+        (token) => {
+            console.log(token);
+            localStorage.setItem('token', token);
+            AuthService.getFolio(localStorage.getItem('username'),localStorage.getItem('password'),localStorage.getItem('token'))
             .then(response => {
-              let folio = response.detail[0].f_folio.toString();
-              localStorage.setItem('folio', folio);
-            })
-            .then(
-              ()=>{
-    
-                getFactura(localStorage.getItem('folio'), localStorage.getItem('token'))
-                  .then(response => {
-                    var b64 = response.detail[0].f_bas64_rg.toString();
-                    localStorage.setItem('base64', b64);
-                    //var link = 'data:application/octet-stream;base64,' + b64;
-                    //console.log(link);
-
-                    // Embed the PDF into the HTML page and show it to the user
-                    var obj = document.createElement('object');
-                    obj.style.width = '100%';
-                    obj.style.height = '842pt';
-                    obj.type = 'application/pdf';
-                    obj.data = 'data:application/pdf;base64,' + b64;
-                    document.body.appendChild(obj);
-
-                    // Insert a link that allows the user to download the PDF file
-                    var link = document.createElement('a');
-                    link.innerHTML = 'Download PDF file';
-                    link.download = 'file.pdf';
-                    link.href = 'data:application/octet-stream;base64,' + b64;
-                    document.body.appendChild(link);		
-                  });
-    
+              console.log(response);
+              if (response.result === "success") {
+                var folio = response.detail[0].f_folio.toString();
+                localStorage.setItem('folio', folio);
+                this.props.history.push("/profile");
+                window.location.reload();
               }
-            )
-    
-      });
+              else {
+                this.setState({
+                  loading: false
+                });
+                console.log('Usuario o contraseña incorrectos');                
+              }
+            });
+        }
+      );
     } else {
       this.setState({
         loading: false
