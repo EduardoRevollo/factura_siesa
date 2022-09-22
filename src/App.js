@@ -57,12 +57,12 @@ class App extends Component {
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/factura_siesa/profile"} className="nav-link">
+                <Link to={"/profile"} className="nav-link">
                   {currentUser.username}
                 </Link>
               </li>
               <li className="nav-item">
-                <a href="/factura_siesa/login" className="nav-link" onClick={this.logOut}>
+                <a href="/login" className="nav-link" onClick={this.logOut}>
                   LogOut
                 </a>
               </li>
@@ -70,7 +70,7 @@ class App extends Component {
           ) : (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/factura_siesa/login"} className="nav-link">
+                <Link to={"/login"} className="nav-link">
                   Login
                 </Link>
               </li>
@@ -80,9 +80,9 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path="/factura_siesa/" component={Login} />
-            <Route exact path="/factura_siesa/login" component={Login} />
-            <Route exact path="/factura_siesa/profile" component={Profile} />
+            <Route exact path="/" component={Login} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
           </Switch>
         </div>
       </div>
