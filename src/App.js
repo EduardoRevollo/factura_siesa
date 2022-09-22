@@ -80,9 +80,9 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path="/factura_siesa/" component={Login} />
-            <Route exact path="/factura_siesa/login" component={Login} />
-            <Route exact path="/factura_siesa/profile" component={Profile} />
+            <Route exact path="/" component={Login} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
           </Switch>
         </div>
       </div>
