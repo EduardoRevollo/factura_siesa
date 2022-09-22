@@ -69,7 +69,7 @@ export default class Login extends Component {
               if (response.result === "success") {
                 var folio = response.detail[0].f_folio.toString();
                 localStorage.setItem('folio', folio);
-                this.props.history.push("/profile");
+                this.props.history.push("/factura_siesa/profile");
                 window.location.reload();
               }
               else {
